@@ -1,5 +1,6 @@
 # encoding: utf-8
 
+from __future__ import division, print_function, unicode_literals
 import objc
 import sys, os, re
 import math
@@ -8,10 +9,12 @@ from GlyphsApp import *
 from GlyphsApp.plugins import *
 
 class ShowComponentsCompatibility (ReporterPlugin):
+	@objc.python_method
 	def settings(self):
 		self.menuName = "Components Compatibility"
-	
-	def checkComponents (self, Layer):
+
+	@objc.python_method
+	def checkComponents(self, Layer):
 
 		thisFont = Glyphs.font
 		currentLayer = thisFont.selectedLayers[0]
@@ -22,7 +25,7 @@ class ShowComponentsCompatibility (ReporterPlugin):
 		zoomedHandleSize = HandleSize / scale
 
 		initPos = -30
-		step = 24	
+		step = 24
 		xHeight = thisFont.selectedFontMaster.xHeight
 		angle = thisFont.selectedFontMaster.italicAngle
 		offset = math.tan(math.radians(angle)) * xHeight/2
@@ -53,10 +56,11 @@ class ShowComponentsCompatibility (ReporterPlugin):
 
 			initPos = initPos - step
 
+	@objc.python_method
 	def background(self, Layer):
 		try:
 			NSColor.colorWithCalibratedRed_green_blue_alpha_(0.0, 0.5, 0.3, 0.5).set()
 			self.checkComponents(Layer)
 		except Exception as e:
 			import traceback
-			print traceback.format_exc()
+			print(traceback.format_exc())
