@@ -16,9 +16,9 @@ class ShowComponentsCompatibility (ReporterPlugin):
 	@objc.python_method
 	def checkComponents(self, Layer):
 
-		thisFont = Glyphs.font
-		currentLayer = thisFont.selectedLayers[0]
+		currentLayer = Layer
 		thisGlyph = currentLayer.parent
+		thisFont = thisGlyph.parent
 
 		HandleSize = self.getHandleSize()
 		scale = self.getScale()
