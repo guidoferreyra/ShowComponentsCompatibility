@@ -13,15 +13,15 @@
 	<key>CFBundleName</key>
 	<string>ShowComponentsCompatibility</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.2</string>
+	<string>1.0.3</string>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>UpdateFeedURL</key>
 	<string>https://raw.githubusercontent.com/guidoferreyra/ShowComponentsCompatibility/master/ShowComponentsCompatibility.glyphsReporter/Contents/Info.plist</string>
 	<key>productPageURL</key>
 	<string>https://github.com/guidoferreyra/ShowComponentsCompatibility</string>
 	<key>productReleaseNotes</key>
-	<string>Update plugin structure</string>
+	<string>Fix display of components for files in the background</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright, Guido Ferreyra, 2015</string>
 	<key>NSPrincipalClass</key>
